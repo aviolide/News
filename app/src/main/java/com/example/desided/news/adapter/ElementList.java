@@ -42,19 +42,21 @@ public class ElementList extends AppCompatActivity{
         mTextViewTitle.setText(articleDb.getTitle());
         mTextViewDescription.setText(articleDb.getDescription());
         final Uri uri = Uri.parse(articleDb.getPicture());
-        Picasso.get()
-                .load(uri)
-                .error(R.drawable.icons8_globe_48)
-                .into(mImageViewIcon, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        Log.d("image", uri.toString());
-                    }
+        if(uri != null) {
+            Picasso.get()
+                    .load(uri)
+                    .error(R.drawable.icons8_globe_48)
+                    .into(mImageViewIcon, new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            Log.d("image", uri.toString());
+                        }
 
-                    @Override
-                    public void onError(Exception e) {
-                        e.printStackTrace();
-                    }
-                });
+                        @Override
+                        public void onError(Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
+        }
     }
 }
