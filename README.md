@@ -1,1 +1,1 @@
-![SCREENSHOT](files/android.png)   
+![SCREENSHOT](files/android.png)

@@ -41,8 +41,9 @@ public class ElementList extends AppCompatActivity{
 
         mTextViewTitle.setText(articleDb.getTitle());
         mTextViewDescription.setText(articleDb.getDescription());
+
+        if (articleDb.getPicture() != null){
         final Uri uri = Uri.parse(articleDb.getPicture());
-        if(uri != null) {
             Picasso.get()
                     .load(uri)
                     .error(R.drawable.icons8_globe_48)
